@@ -30,9 +30,7 @@ GLUON_SITE_PACKAGES := \
 	respondd-module-airtime \
 	respondd-module-wifimeshrate \
 	gluon-tunneldigger-watchdog \
-	gluon-quickfix \
-	gluon-wanmesh-disabler \
-	gluon-vfn-cleanup
+	gluon-quickfix
 
 USB_BASIC := \
 	kmod-usb-core \
