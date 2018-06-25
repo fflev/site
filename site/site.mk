@@ -32,7 +32,8 @@ GLUON_SITE_PACKAGES := \
 	respondd-module-airtime \
 	respondd-module-wifimeshrate \
 	gluon-tunneldigger-watchdog \
-	gluon-quickfix
+	gluon-quickfix \
+	gluon-ssid-changer
 
 USB_BASIC := \
 	kmod-usb-core \
