@@ -1,6 +1,6 @@
-ourRelease: 6.0.0
+ourRelease: 6.2.0
 ourBranch: stable
-gluonRelease: 2018.2
+gluonRelease: 2018.2.2
 targets:
     - { target: ar71xx-generic, buildBroken: true }
     - { target: ar71xx-nand }

@@ -1,10 +1,13 @@
 ##	gluon site.mk makefile example
 
-##	GLUON_SITE_PACKAGES
-#		specify Gluon/LEDE packages to include here
+##	GLUON_FEATURES
+#		Specify Gluon features/packages to enable;
+#		Gluon will automatically enable a set of packages
+#		depending on the combination of features listed
 
 GLUON_FEATURES := \
 	autoupdater \
+	config-mode-domain-select \
 	config-mode-geo-location-osm \
 	ebtables-filter-multicast \
 	ebtables-filter-ra-dhcp \
@@ -14,10 +17,22 @@ GLUON_FEATURES := \
 	mesh-vpn-tunneldigger \
 	radvd \
 	respondd \
+	scheduled-domain-switch \
 	status-page \
 	web-advanced \
 	web-private-wifi \
 	web-wizard
+
+##	GLUON_MULTIDOMAIN
+#		Build gluon with multidomain support.
+
+GLUON_MULTIDOMAIN=1
+
+##	GLUON_SITE_PACKAGES
+#		Specify additional Gluon/LEDE packages to include here;
+#		A minus sign may be prepended to remove a packages from the
+#		selection that would be enabled by default or due to the
+#		chosen feature flags
 
 GLUON_SITE_PACKAGES := \
 	haveged \
@@ -92,3 +107,6 @@ GLUON_REGION ?= eu
 
 # Languages to include
 GLUON_LANGS ?= en de
+
+# Do not build images for deprecated devices
+GLUON_DEPRECATED ?= full
