@@ -39,7 +39,6 @@ GLUON_SITE_PACKAGES := \
 	iwinfo \
 	respondd-module-airtime \
 	respondd-module-wifimeshrate \
-	gluon-tunneldigger-watchdog \
 	gluon-ssid-changer
 
 USB_BASIC := \

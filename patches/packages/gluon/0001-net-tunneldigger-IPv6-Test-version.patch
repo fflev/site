@@ -1,0 +1,56 @@
+From d63f829ee4198e637c7a751a60ba38fcf257a0af Mon Sep 17 00:00:00 2001
+From: Felix Kaechele <felix@kaechele.ca>
+Date: Fri, 18 Oct 2019 15:00:08 -0400
+Subject: [PATCH] net/tunneldigger: IPv6 Test version
+
+Signed-off-by: Felix Kaechele <felix@kaechele.ca>
+---
+ net/tunneldigger/Makefile                | 6 +++---
+ net/tunneldigger/files/tunneldigger.init | 7 -------
+ 2 files changed, 3 insertions(+), 10 deletions(-)
+
+diff --git a/net/tunneldigger/Makefile b/net/tunneldigger/Makefile
+index 7cd30e1..ce06817 100644
+--- a/net/tunneldigger/Makefile
++++ b/net/tunneldigger/Makefile
+@@ -4,9 +4,9 @@ PKG_NAME:=tunneldigger
+ PKG_RELEASE:=1
+ 
+ PKG_SOURCE_PROTO:=git
+-PKG_SOURCE_URL:=git://github.com/wlanslovenija/tunneldigger.git
+-PKG_SOURCE_DATE:=2019-04-01
+-PKG_SOURCE_VERSION:=7c467e68021526b8631e8a53a9022aa223b1991c
++PKG_SOURCE_URL:=git://github.com/kaechele/tunneldigger.git
++PKG_SOURCE_DATE:=2019-10-22
++PKG_SOURCE_VERSION:=b20ba68c263345a82de1c910956df524bee78a59
+ 
+ include $(INCLUDE_DIR)/package.mk
+ include $(INCLUDE_DIR)/cmake.mk
+diff --git a/net/tunneldigger/files/tunneldigger.init b/net/tunneldigger/files/tunneldigger.init
+index 09d08cf..55747e5 100755
+--- a/net/tunneldigger/files/tunneldigger.init
++++ b/net/tunneldigger/files/tunneldigger.init
+@@ -23,7 +23,6 @@ config_cb() {
+ 			config_get group "$cfg" group
+ 			config_get limit_bw_down "$cfg" limit_bw_down
+ 			config_get hook_script "$cfg" hook_script
+-			config_get bind_interface "$cfg" bind_interface
+ 			config_get broker_selection "$cfg" broker_selection
+ 			
+ 			[ $enabled -eq 0 ] && return
+@@ -35,12 +34,6 @@ config_cb() {
+ 
+ 			[ ! -z "${limit_bw_down}" ] && append broker_opts "-L ${limit_bw_down}"
+ 			[ ! -z "${hook_script}" ] && append broker_opts "-s ${hook_script}"
+-			[ ! -z "${bind_interface}" ] && {
+-				# Resolve logical interface name.
+-				unset _bind_interface
+-				network_get_device _bind_interface "${bind_interface}" || _bind_interface="${bind_interface}"
+-				append broker_opts "-I ${_bind_interface}"
+-			}
+ 			[ ! -z "${broker_selection}" ] && {
+ 				# Set broker selection.
+ 				case "${broker_selection}" in
+-- 
+2.23.0
+
