@@ -1,13 +1,17 @@
-ourRelease: 7.0.1
+ourRelease: 8.0.0
 ourBranch: stable
-gluonRelease: 2019.1
+gluonRelease: 2020.1.2
 targets:
     - { target: ar71xx-generic, buildBroken: true }
     - { target: ar71xx-nand }
     - { target: ar71xx-tiny }
+    - { target: ath79-generic }
     - { target: brcm2708-bcm2708 }
     - { target: brcm2708-bcm2709 }
-    - { target: ipq40xx }
+    - { target: ipq40xx-generic }
+    - { target: ipq806x-generic }
+    - { target: lantiq-xrx200 }
+    - { target: lantiq-xway }
     - { target: mpc85xx-generic }
     - { target: mpc85xx-p1020 }
     - { target: ramips-mt7620 }
