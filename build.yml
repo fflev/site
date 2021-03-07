@@ -1,24 +1,26 @@
-ourRelease: 8.0.0
+---
+
+ourRelease: 8.1.0
 ourBranch: stable
-gluonRelease: 2020.1.2
+gluonRelease: 2020.2.2
 targets:
-    - { target: ar71xx-generic, buildBroken: true }
-    - { target: ar71xx-nand }
-    - { target: ar71xx-tiny }
-    - { target: ath79-generic }
-    - { target: brcm2708-bcm2708 }
-    - { target: brcm2708-bcm2709 }
-    - { target: ipq40xx-generic }
-    - { target: ipq806x-generic }
-    - { target: lantiq-xrx200 }
-    - { target: lantiq-xway }
-    - { target: mpc85xx-generic }
-    - { target: mpc85xx-p1020 }
-    - { target: ramips-mt7620 }
-    - { target: ramips-mt7621 }
-    - { target: ramips-mt76x8 }
-    - { target: ramips-rt305x }
-    - { target: sunxi-cortexa7 }
-    - { target: x86-64 }
-    - { target: x86-generic }
-    - { target: x86-geode }
+    - { target: ar71xx-generic, arch: mips_24kc, buildBroken: true }
+    - { target: ar71xx-nand, arch: mips_24kc }
+    - { target: ar71xx-tiny, arch: mips_24kc }
+    - { target: ath79-generic, arch: mips_24kc }
+    - { target: brcm2708-bcm2708, arch: arm_arm1176jzf-s_vfp }
+    - { target: brcm2708-bcm2709, arch: arm_cortex-a7_neon-vfpv4 }
+    - { target: ipq40xx-generic, arch: arm_cortex-a7_neon-vfpv4 }
+    - { target: ipq806x-generic, arch: arm_cortex-a15_neon-vfpv4 }
+    - { target: lantiq-xrx200, arch: mips_24kc }
+    - { target: lantiq-xway, arch: mips_24kc }
+    - { target: mpc85xx-generic, arch: powerpc_8540 }
+    - { target: mpc85xx-p1020, arch: powerpc_8540 }
+    - { target: ramips-mt7620, arch: mipsel_24kc }
+    - { target: ramips-mt7621, arch: mipsel_24kc }
+    - { target: ramips-mt76x8, arch: mipsel_24kc }
+    - { target: ramips-rt305x, arch: mipsel_24kc }
+    - { target: sunxi-cortexa7, arch: arm_cortex-a7_neon-vfpv4 }
+    - { target: x86-64, arch: x86_64 }
+    - { target: x86-generic, arch: i386_pentium4 }
+    - { target: x86-geode, arch: i386_pentium }
