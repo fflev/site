@@ -15,13 +15,15 @@ GLUON_FEATURES := \
 	ebtables-source-filter \
 	mesh-batman-adv-15 \
 	mesh-vpn-tunneldigger \
-	radvd \
 	respondd \
 	scheduled-domain-switch \
 	status-page \
 	web-advanced \
 	web-private-wifi \
 	web-wizard
+
+GLUON_FEATURES_standard := \
+	wireless-encryption-wpa3
 
 ##	GLUON_MULTIDOMAIN
 #		Build gluon with multidomain support.
@@ -35,7 +37,6 @@ GLUON_MULTIDOMAIN=1
 #		chosen feature flags
 
 GLUON_SITE_PACKAGES := \
-	haveged \
 	iwinfo \
 	respondd-module-airtime \
 	gluon-ssid-changer
@@ -83,7 +84,7 @@ endif
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 8.0.0+exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 8.1.0+exp$(shell date '+%Y%m%d')
 
 
 ##	GLUON_RELEASE
