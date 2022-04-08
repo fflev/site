@@ -14,7 +14,7 @@ GLUON_FEATURES := \
 	ebtables-limit-arp \
 	ebtables-source-filter \
 	mesh-batman-adv-15 \
-	mesh-vpn-tunneldigger \
+	mesh-vpn-fastd-l2tp \
 	respondd \
 	scheduled-domain-switch \
 	status-page \
@@ -84,7 +84,7 @@ endif
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 8.1.0+exp$(shell date '+%Y%m%d')
+DEFAULT_GLUON_RELEASE := 9.0.0+exp$(shell date '+%Y%m%d')
 
 
 ##	GLUON_RELEASE

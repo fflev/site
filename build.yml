@@ -1,8 +1,8 @@
 ---
 
-ourRelease: 8.1.0
+ourRelease: 9.0.0
 ourBranch: stable
-gluonRelease: 2020.2.2
+gluonRelease: 2021.1.1-l2tp
 targets:
     - { target: ar71xx-generic, arch: mips_24kc, buildBroken: true }
     - { target: ar71xx-nand, arch: mips_24kc }
